@@ -2,562 +2,1817 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shweta | Analyst</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Devicon -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta Bhagat | Analyst</title> <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Editorial Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #0e0e0e;
-      color: #ddd;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .hero {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      padding: 6rem 2rem;
-      gap: 4rem;
-      flex-wrap: wrap;
-    }
+        body {
+            background: #0e0e0e;
+            color: #ddd;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
 
-    .hero-text {
-      max-width: 500px;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #fff;
-    }
+        section {
+            position: relative;
+        }
 
-    .hero h1 span {
-      color: #ff2e88;
-    }
+        ::selection {
+            background: #2563eb;
+            color: white;
+        }
 
-    .hero p {
-      color: #aaa;
-      font-size: 1.125rem;
-      margin: 1rem 0 2rem;
-    }
+        /* NAV BAR BASE */
+        nav {
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #2c2c2c;
+            top: 0;
+            z-index: 50;
+        }
 
-    .hero-buttons a {
-      margin: 0.5rem 0.5rem 0.5rem 0;
-      padding: 0.75rem 2rem;
-      border-radius: 50px;
-      color: #fff;
-      background: linear-gradient(135deg, #7f00ff, #e100ff);
-      border: none;
-      text-decoration: none;
-      transition: all 0.3s ease-in-out;
-    }
+        /* NAV LINKS BASE STYLE */
+        nav .nav-link {
+            margin: 0 0.5rem;
+            padding: 0.5rem;
+            position: relative;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
-    .hero-buttons a:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #6a00ff, #ff00e0);
-    }
+        /* HOVER EFFECT */
+        nav .nav-link:hover {
+            color: #3b82f6;
+        }
 
-    /* NAV BAR BASE */
-    nav {
-      background-color: #1a1a1a;
-      border-bottom: 1px solid #2c2c2c;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+        /* ACTIVE LINK */
+        nav .nav-link.active,
+        nav .nav-link:focus {
+            color: #3b82f6;
+            font-weight: 600;
+        }
 
-    /* NAV LINKS BASE STYLE */
-    nav .nav-link {
-      margin: 0 0.5rem;
-      padding: 0.5rem;
-      position: relative;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
+        /* UNDERLINE EFFECT */
+        nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
 
-    /* HOVER EFFECT */
-    nav .nav-link:hover {
-      color: #60a5fa;
-    }
+        
+        nav .nav-link:hover::after,
+        nav .nav-link.active::after {
+            width: 100%;
+        }
 
-    /* ACTIVE LINK */
-    nav .nav-link.active,
-    nav .nav-link:focus {
-      color: #38bdf8;
-      font-weight: 600;
-    }
+        /* Hamburger styles */
+        #menu-btn {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-    /* UNDERLINE EFFECT */
-    nav .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0%;
-      height: 2px;
-      background: #38bdf8;
-      transition: width 0.3s ease;
-    }
+        .hamburger-icon {
+            transition: all 0.3s ease-in-out;
+        }
 
-    nav .nav-link:hover::after,
-    nav .nav-link.active::after {
-      width: 100%;
-    }
+        .hamburger-icon.open {
+            transform: rotate(90deg);
+        }
 
-    /* Hamburger styles */
-    #menu-btn {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
+        .text-color {
+            color: #3b82f6;
+        }
 
-    .hamburger-icon {
-      transition: all 0.3s ease-in-out;
-    }
+        /* Mobile menu animation */
+        #nav-links {
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+            overflow: hidden;
+        }
 
-    .hamburger-icon.open {
-      transform: rotate(90deg);
-    }
+        #nav-links.closed {
+            max-height: 0;
+            opacity: 0;
+        }
 
-    /* Mobile menu animation */
-    #nav-links {
-      transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
-      overflow: hidden;
-    }
+        #nav-links.open {
+            max-height: 500px;
+            opacity: 1;
+        }
 
-    #nav-links.closed {
-      max-height: 0;
-      opacity: 0;
-    }
+        /* Mobile nav link hover */
+        #nav-links a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-    #nav-links.open {
-      max-height: 500px;
-      opacity: 1;
-    }
+        #nav-links a:hover {
+            color: #38bdf8;
+        }
 
-    /* Mobile nav link hover */
-    #nav-links a {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    #nav-links a:hover {
-      color: #38bdf8;
-    }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle, black 30%, transparent 90%);
+        }
 
-    section h2 {
-      color: #ff2e88;
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(37, 99, 235, .12);
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+        }
 
-    .profile-img {
-      width: 320px;
-      height: auto;
-      border-radius: 1rem;
-      box-shadow: 0 0 30px rgba(255, 46, 136, 0.3);
-    }
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-      border-top: 1px solid #2c2c2c;
-    }
-  </style>
+        .hero-tag {
+            letter-spacing: 5px;
+            color: #b8c6e3;
+            font-size: .9rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title span {
+            color: #3b82f6;
+        }
+
+        .hero-role {
+            font-size: clamp(1.3rem, 3vw, 2.2rem);
+            color: white;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .hero-description {
+            max-width: 760px;
+            margin: auto;
+            color: #a3a3a3;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background: #2563eb;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 16px;
+            transition: .3s;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary-custom {
+            border: 1px solid #333;
+            color: white;
+            background: rgba(255, 255, 255, .03);
+            padding: 14px 28px;
+            border-radius: 16px;
+            transition: .3s;
+        }
+
+        .btn-secondary-custom:hover {
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .btn-primary-custom i,
+        .btn-secondary-custom i {
+            margin-right: 8px;
+        }
+
+        /* ===== INTRO ===== */
+        .intro-section {
+            padding: 100px 8%;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 420px;
+            gap: 120px;
+            align-items: start;
+        }
+
+        .intro-left {
+            width: 100%;
+        }
+
+        .intro-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .intro-tag {
+            display: inline-block;
+            color: #60a5fa;
+            letter-spacing: 4px;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .intro-heading {
+            font-size: clamp(2rem, 4vw, 1em);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .intro-heading span {
+            color: #3b82f6;
+        }
+
+        .intro-text {
+            color: #a3a3a3;
+            font-size: 1rem;
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+
+        .intro-text span {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        /* RIGHT SIDE */
+        .intro-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .journey-panel {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            padding-left: 40px;
+        }
+
+        /* Vertical Line */
+        .journey-panel::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(59, 130, 246, .7), rgba(59, 130, 246, .15));
+            border-radius: 999px;
+        }
+
+        /* Dots */
+        .journey-card::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 42px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, .15), 0 0 20px rgba(59, 130, 246, .35);
+        }
+
+        .journey-card {
+            padding: 30px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, .02);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            transition: .35s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, .25);
+        }
+
+        .journey-label {
+            display: block;
+            color: #8f8f8f;
+            letter-spacing: 3px;
+            font-size: .70rem;
+            margin-bottom: 2px;
+        }
+
+        .journey-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: white;
+            line-height: 0.8;
+            letter-spacing: -2px;
+        }
+
+        .Journey-num {
+            font-size: 3rem;
+        }
+
+        .Journey-year {
+            font-size: 2rem;
+        }
+
+        /* CAREER */
+        .career-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .role-card {
+            width: 100%;
+            padding: 9px 13px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .role-card.current {
+            background: rgba(59, 130, 246, .12);
+            border: 1px solid rgba(59, 130, 246, .35);
+            color: #60a5fa;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .role-card.previous {
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            color: #d0d0d0;
+            font-size: 0.9rem;
+        }
+
+        .career-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* APAC */
+        .apac-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            line-height: 1.2;
+        }
+
+        /* ========================= RESPONSIVE ========================= */
+        @media (max-width:1200px) {
+            .intro-grid {
+                grid-template-columns: 1fr 380px;
+                gap: 80px;
+            }
+
+            .intro-heading {
+                font-size: 2.7rem;
+            }
+
+            .journey-panel {
+                max-width: 380px;
+            }
+
+            .journey-number {
+                font-size: 3.5rem;
+            }
+
+            .apac-text {
+                font-size: 3rem;
+            }
+
+            .role-card.current {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width:992px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-role {
+                font-size: 1.6rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .intro-right {
+                justify-content: flex-start;
+            }
+
+            .journey-panel {
+                max-width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .journey-card {
+                margin-bottom: 0;
+                height: 100%;
+            }
+
+            .intro-heading {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width:768px) {
+            .hero-section {
+                min-height: auto;
+                padding: 70px 20px;
+            }
+
+            .hero-tag {
+                font-size: .8rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-role {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: .95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                width: 250px;
+            }
+
+            .intro-section {
+                padding: 70px 6%;
+            }
+
+            .intro-heading {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+
+            .journey-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-card {
+                padding: 24px;
+            }
+
+            .journey-number {
+                font-size: 3rem;
+            }
+
+            .apac-text {
+                font-size: 2.8rem;
+            }
+
+            .role-card.current {
+                font-size: 1.1rem;
+            }
+
+            .role-card.previous {
+                font-size: .95rem;
+            }
+        }
+
+        @media (max-width:480px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-role {
+                font-size: 1rem;
+            }
+
+            .hero-description {
+                font-size: .9rem;
+            }
+
+            .intro-section {
+                padding: 60px 5%;
+            }
+
+            .intro-tag {
+                font-size: .75rem;
+                letter-spacing: 3px;
+            }
+
+            .intro-heading {
+                font-size: 1.75rem;
+            }
+
+            .intro-text {
+                font-size: .95rem;
+                line-height: 1.8;
+            }
+
+            .journey-card {
+                padding: 20px;
+                border-radius: 18px;
+            }
+
+            .journey-number {
+                font-size: 2.5rem;
+            }
+
+            .apac-text {
+                font-size: 2.3rem;
+            }
+
+            .journey-label {
+                font-size: .72rem;
+                letter-spacing: 2px;
+            }
+
+            .role-card.current {
+                font-size: 1rem;
+                padding: 14px;
+            }
+
+            .role-card.previous {
+                font-size: .85rem;
+                padding: 14px;
+            }
+
+            .career-arrow {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .career-section {
+            padding: 100px 7%;
+        }
+
+        .career-tabs {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 16px 28px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .02);
+            color: #bdbdbd;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: .3s ease;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            border-color: #3b82f6;
+            color: white;
+        }
+
+        .tab-btn.active {
+            background: rgba(59, 130, 246, .08);
+            border-color: rgba(59, 130, 246, .35);
+            color: #60a5fa;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active-tab {
+            display: block;
+            animation: fadeTab .45s ease;
+        }
+
+        @keyframes fadeTab {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================= EDUCATION TIMELINE ========================= */
+        .education-content {
+            max-width: 950px;
+            margin: auto;
+            position: relative;
+        }
+
+        .education-content::before {
+            content: "";
+            position: absolute;
+            left: 115px;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: rgba(59, 130, 246, .25);
+        }
+
+        .edu-card {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 45px;
+            margin-bottom: 55px;
+            position: relative;
+        }
+
+        .edu-card::before {
+            content: "";
+            position: absolute;
+            left: 108px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, .5);
+        }
+
+        .edu-year {
+            color: #60a5fa;
+            font-size: .9rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .edu-details h3 {
+            color: white;
+            font-size: 1.55rem;
+            margin-bottom: 8px;
+        }
+
+        .edu-details p {
+            color: #d1d5db;
+            margin-bottom: 10px;
+        }
+
+        .edu-details span {
+            color: #8c8c8c;
+            line-height: 1.8;
+        }
+
+        /* CAREER TRANSITION */
+        .switch-story {
+            margin-top: 70px;
+            padding-left: 185px;
+        }
+
+        .switch-label {
+            color: #60a5fa;
+            letter-spacing: 3px;
+            font-size: .8rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .switch-story h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            line-height: 1;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .switch-story p {
+            color: #a3a3a3;
+            line-height: 2;
+            max-width: 750px;
+            margin-bottom: 18px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .education-content::before {
+                left: 12px;
+            }
+
+            .edu-card {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding-left: 40px;
+            }
+
+            .edu-card::before {
+                left: 5px;
+            }
+
+            .switch-story {
+                padding-left: 40px;
+            }
+
+            .switch-story h3 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* ========================= EXPERIENCE ========================= */
+        .experience-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 30px;
+            padding: 40px;
+            transition: .35s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(59, 130, 246, .25);
+        }
+
+        .current-role {
+            border-color: rgba(59, 130, 246, .22);
+        }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .exp-tag {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, .12);
+            color: #60a5fa;
+            font-size: .75rem;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .secondary {
+            background: rgba(255, 255, 255, .05);
+            color: #c5c5c5;
+        }
+
+        .exp-top h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 6px;
+        }
+
+        .exp-top h4 {
+            color: #60a5fa;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        .exp-duration {
+            color: #8f8f8f;
+        }
+
+        .exp-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #3b82f6;
+            line-height: 1;
+        }
+
+        .secondary-badge {
+            color: #888;
+        }
+
+        .exp-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .exp-skills span {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .06);
+            color: #d6d6d6;
+            font-size: .9rem;
+        }
+
+        .exp-points {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exp-points li {
+            position: relative;
+            padding-left: 28px;
+            color: #b3b3b3;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
+
+        .exp-points li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3b82f6;
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            .experience-card {
+                padding: 28px;
+            }
+
+            .exp-top {
+                flex-direction: column;
+            }
+
+            .exp-top h3 {
+                font-size: 1.6rem;
+            }
+
+            .exp-badge {
+                font-size: 3rem;
+            }
+        }
+
+        /* ========================= SKILLS SECTION ========================= */
+        .skills-section {
+            padding: 80px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 30%, transparent 95%);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 90px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: #60a5fa;
+            letter-spacing: 4px;
+            font-size: .8rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .skills-heading {
+            font-size: 2.6rem;
+            color: white;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* ========================= LEFT SIDE ========================= */
+        .strength-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .strength-item {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .strength-item:last-child {
+            border-bottom: none;
+        }
+
+        .strength-number {
+            color: #3b82f6;
+            font-size: .9rem;
+            font-weight: 700;
+            min-width: 40px;
+            letter-spacing: 2px;
+        }
+
+        .strength-item h4 {
+            color: white;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .strength-item p {
+            color: #9ca3af;
+            line-height: 1.8;
+            font-size: .98rem;
+        }
+
+        /* ========================= RIGHT SIDE ========================= */
+        .skills-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        /* PILL EFFECT */
+        .skills-cloud span {
+            transition: all .35s ease;
+            cursor: default;
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .skills-cloud span:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, .35);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, .12);
+        }
+
+        /* ========================= LEARNING BOX ========================= */
+        .learning-box {
+            margin-top: 45px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .learning-box .uppercase {
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .learning-box span:not(.uppercase) {
+            transition: .3s ease;
+        }
+
+        .learning-box span:not(.uppercase):hover {
+            transform: translateY(-3px);
+        }
+
+        /* ========================= RESPONSIVE ========================= */
+        @media(max-width:1200px) {
+            .skills-grid {
+                gap: 60px;
+            }
+        }
+
+        @media(max-width:992px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .skills-heading {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media(max-width:768px) {
+            .skills-section {
+                padding: 80px 6%;
+            }
+
+            .skills-heading {
+                font-size: 1.9rem;
+            }
+
+            .strength-item {
+                gap: 18px;
+            }
+
+            .strength-item h4 {
+                font-size: 1rem;
+            }
+
+            .strength-item p {
+                font-size: .92rem;
+            }
+        }
+
+        @media(max-width:480px) {
+            .skills-heading {
+                font-size: 1.7rem;
+            }
+
+            .skills-cloud {
+                gap: 10px;
+            }
+
+            .strength-number {
+                min-width: 28px;
+            }
+        }
+
+        /* ========================= SHOWCASE SECTION ========================= */
+        .showcase-section {
+            padding: 120px 8%;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: #60a5fa;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        /* ========================= TABS ========================= */
+        .showcase-tabs {
+            display: inline-flex;
+            gap: 8px;
+            padding: 8px;
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 18px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .showcase-tab {
+            border: none;
+            background: transparent;
+            color: #8b8b8b;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: .35s ease;
+            cursor: pointer;
+        }
+
+        .showcase-tab:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .showcase-tab.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, .15), rgba(59, 130, 246, .05));
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, .2);
+            box-shadow: 0 0 20px rgba(59, 130, 246, .08);
+        }
+
+        /* ========================= CONTENT ========================= */
+        .showcase-content {
+            display: none;
+            animation: fadeShow .45s ease;
+        }
+
+        .showcase-content.active-content {
+            display: block;
+        }
+
+        @keyframes fadeShow {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width:768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+
+            .showcase-tabs {
+                width: 100%;
+                display: flex;
+            }
+
+            .showcase-tab {
+                flex: 1;
+                padding: 12px 10px;
+                font-size: .9rem;
+            }
+        }
+
+        @media(max-width:480px) {
+            .showcase-tab {
+                width: 100%;
+                flex: none;
+            }
+        }
+
+        /* ========================== INTERNSHIPS ========================== */
+        .internship-timeline {
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .internship-item {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .internship-year {
+            color: #4f8cff;
+            font-size: .85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            padding-top: 12px;
+        }
+
+        .internship-info {
+            position: relative;
+            padding: 22px 0 22px 28px;
+            border-left: 2px solid rgba(255, 255, 255, .08);
+            transition: .35s ease;
+        }
+
+        .internship-info::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #4f8cff;
+            box-shadow: 0 0 20px rgba(79, 140, 255, .4);
+        }
+
+        .internship-item:hover .internship-info {
+            border-color: #4f8cff;
+        }
+
+        .internship-info h3 {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .internship-info h4 {
+            color: #7ea8ff;
+            font-size: .95rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .internship-duration {
+            color: #9ca3af;
+        }
+
+        .internship-description {
+            color: #b8b8b8;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .featured .internship-info {
+            border-color: rgba(255, 193, 7, .25);
+        }
+
+        .featured .internship-info::before {
+            background: #ffca55;
+            box-shadow: 0 0 25px rgba(255, 193, 7, .45);
+        }
+
+        /* ========================== ACHIEVEMENTS ========================== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            position: relative;
+            overflow: hidden;
+            padding: 35px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+            border: 1px solid rgba(255, 255, 255, .06);
+            transition: .35s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, .12);
+        }
+
+        .achievement-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+
+        .appreciation .achievement-icon {
+            background: rgba(250, 204, 21, .12);
+            color: #facc15;
+        }
+
+        .recommendation .achievement-icon {
+            background: rgba(59, 130, 246, .12);
+            color: #60a5fa;
+        }
+
+        .achievement-tag {
+            display: inline-block;
+            font-size: .75rem;
+            letter-spacing: 3px;
+            color: #8a8a8a;
+            margin-bottom: 12px;
+        }
+
+        .achievement-card h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .achievement-card h4 {
+            color: #60a5fa;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .achievement-card p {
+            color: #a3a3a3;
+            line-height: 1.8;
+        }
+
+        /* top accent */
+        .appreciation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #facc15;
+        }
+
+        .recommendation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #3b82f6;
+        }
+
+        /* mobile */
+        @media(max-width:768px) {
+            .achievement-card {
+                padding: 28px;
+            }
+
+            .achievement-card h3 {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="bg-[#1a1a1a] border-b border-[#2c2c2c] px-6 md:px-20 py-4 sticky top-0 z-50 shadow-md">
-    <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <div class="text-3xl font-bold tracking-wide">
-        <span class="text-blue-400">&lt;</span><span class="text-white">Shweta</span><span
-          class="text-blue-400">/&gt;</span>
-      </div>
+    <nav class="bg-black/10 px-6 md:px-20 py-4 top-0 z-50">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-3xl font-bold tracking-wide">
+                <span class="text-400 text-color ">&lt;</span><span class="text-white">Shweta</span><span
+                    class="text-400 text-color">/&gt;</span>
+            </div>
 
-      <!-- Hamburger (Mobile) -->
-      <button id="menu-btn" class="text-white text-2xl md:hidden focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
+            <!-- Hamburger (Mobile) -->
+            <button id="menu-btn" class="text-white text-2xl md:hidden focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
 
-      <!-- Links (Desktop) -->
-      <div class="hidden md:flex gap-6 text-sm md:text-base">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="resume.html" class="nav-link">Resume</a>
-      </div>
-    </div>
-
-    <!-- Dropdown Menu (Mobile) -->
-    <div id="nav-links" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
-      <div class="flex flex-col gap-4 mt-4 text-sm">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="resume.html" class="nav-link">Resume</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="h-[65vh] bg-black text-white flex items-center justify-center px-1">
-    <div class="max-w-3xl text-center">
-      <p class="text-sm tracking-widest text-gray-400 uppercase">Thank you for stopping by!</p>
-      <h1 class="text-5xl font-bold mt-4 leading-tight">
-        Hi, I'm <span class="text-blue-500">Shweta</span>
-      </h1>
-      <p class="mt-3 text-xl text-gray-300 font-semibold"> Analyst @ Marsh McLennan</p>
-      <p class="mt-4 text-base text-gray-400 leading-relaxed">
-        I use data to simplify complex problems and deliver actionable insights. Currently working at Mercer – Marsh
-        McLennan, I focus on compensation & benefits analytics, reporting, and automation to support client
-        decision-making.
-      </p>
-      <div class="mt-6 flex justify-center gap-4">
-        <a href="https://www.linkedin.com/in/shweta-bhagat-869960214/" target="_blank"
-          class="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition">LinkedIn</a>
-        <a href="https://github.com/ShwetaBhagat13" target="_blank"
-          class="bg-gray-800 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-700 transition">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTRO SECTION -->
-  <section class="bg-[#121212] py-20 px-6 md:px-20 text-white">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-
-      <!-- LEFT TEXT -->
-      <div class="w-full md:w-1/2 text-left">
-        <h2 class="text-2xl md:text-4xl font-bold mb-6 text-blue-500">Intro</h2>
-
-        <p class="text-base md:text-lg text-gray-300 leading-relaxed">
-          Hello, I’m <span class="font-semibold text-blue-500">Shweta Bhagat</span> — Hello, I’m Shweta Bhagat — an Analyst
-          passionate about transforming data into meaningful insights.
-        </p>
-
-        <p class="text-base md:text-lg text-gray-400 leading-relaxed mt-4">
-          Currently working at <span class="text-blue-500 font-semibold">Mercer </span>,
-          where i generate and validate compensation & benefits reports, configure MarketViews for client-specific
-          access, and collaborate across teams to streamline workflows and ensure timely delivery.
-        </p>
-
-        <p class="text-base md:text-lg text-gray-300 leading-relaxed mt-4">
-          Skilled in <span class="text-blue-400 font-medium">Excel, SQL, Power BI, and Python</span>,
-          I help businesses uncover patterns, drive smarter decisions, and present stories that data tells — all with
-          precision and clarity.
-        </p>
-
-        <p class="text-base md:text-lg text-gray-400 leading-relaxed mt-4">
-          From cleaning messy spreadsheets to building real-time dashboards, I enjoy solving problems
-          that create real impact.
-        </p>
-      </div>
-
-      <!-- RIGHT IMAGE (Hidden on small screens) -->
-      <div class="hidden md:flex w-full md:w-1/2 justify-center">
-        <div class="w-64 h-64 rounded-full border-4 border-white-500 overflow-hidden shadow-xl">
-          <img src="images/Profile.jpg" alt="Shweta profile" class="w-full h-full object-cover" />
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EDUCATION SECTION -->
-  <section id="education" class="bg-[#0e0e0e] py-20 px-6 md:px-20 text-white">
-    <div class="max-w-6xl mx-auto">
-      <!-- Heading -->
-      <h2 class="text-2xl md:text-4xl font-bold mb-10 text-blue-500 text-center md:text-left">
-        Education
-      </h2>
-
-      <!-- Education Table -->
-      <div class="w-full px-4">
-        <div class="max-w-3xl mx-auto overflow-x-auto rounded-lg shadow-lg border border-gray-700 mt-8">
-          <table class="w-full text-left text-xs md:text-sm text-gray-300">
-            <thead class="bg-[#1c1c1c] text-blue-400 uppercase tracking-wider text-xs md:text-sm">
-              <tr>
-                <th scope="col" class="px-3 md:px-4 py-2 md:py-3">Course</th>
-                <th scope="col" class="px-3 md:px-4 py-2 md:py-3">Institution</th>
-                <th scope="col" class="px-3 md:px-4 py-2 md:py-3">Year</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-800">
-              <tr class="hover:bg-[#1a1a1a]">
-                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white"> Bachelor of Commerce (Hons.)
-                </td>
-                <td class="px-3 md:px-4 py-2 md:py-3">University of Delhi</td>
-                <td class="px-3 md:px-4 py-2 md:py-3">2021-24</td>
-              </tr>
-              <tr class="hover:bg-[#1a1a1a]">
-                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Class XII (Commerce)</td>
-                <td class="px-3 md:px-4 py-2 md:py-3">Police Modern School</td>
-                <td class="px-3 md:px-4 py-2 md:py-3">2020-21</td>
-              </tr>
-              <tr class="hover:bg-[#1a1a1a]">
-                <td class="px-3 md:px-4 py-2 md:py-3 font-medium text-white">Class X</td>
-                <td class="px-3 md:px-4 py-2 md:py-3">Police Modern School</td>
-                <td class="px-3 md:px-4 py-2 md:py-3">2018-19</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- WHY I SWITCHED -->
-    <div class="mt-5 px-2 md:px-0 py-2 text-gray-400 text-sm md:text-lg font-light leading-relaxed max-w-4xl mx-auto">
-      <h3 class="text-[#3b82f6] text-lg md:text-xl font-semibold mb-4">Why I Switched?</h3>
-      <p>
-        Coming from a commerce background, I discovered my real interest while working with reports and data.
-        I enjoyed analyzing, validating, and simplifying information. This interest led me to upskill in Excel, SQL,
-        Power BI, and Python, where I started building dashboards and analytics projects. What
-        began as curiosity soon became a clear career direction: moving from reporting and administration into data
-        analytics
-        and insights-driven work.
-      </p>
-    </div>
-  </section>
-
-  <!-- WHY SHOULD YOU HIRE ME -->
-  <section class="bg-[#121212] py-14 px-4 sm:px-6 md:px-20 text-white">
-    <div class="max-w-6xl mx-auto">
-      <!-- HEADING -->
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-blue-500 text-left">
-        Why Should You Hire Me?
-      </h2>
-
-      <!-- REASONS + SKILLS -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm sm:text-base md:text-[17px] text-gray-300">
-        <!-- BULLET REASONS -->
-        <ul class="space-y-3 list-disc list-inside leading-relaxed">
-          <li><span class="text-white font-semibold">Quick Learner</span> – I adapt fast and like mastering new tools.
-          </li>
-          <li><span class="text-white font-semibold">Hands on Experience</span> – At Mercer, I handle, validate, and
-            analyse reports, while internships gave me practical skills and enhanced my knowledge base.
-          <li><span class="text-white font-semibold">Problem Solver</span> – I simplify messy data into insights.</li>
-          <li><span class="text-white font-semibold">Tech Versatility</span> – Skilled in Python, SQL, Power BI, Excel,
-            HTML/CSS and more!
-          </li>
-          <li><span class="text-white font-semibold">Strong Communicator</span> – Led tech team in placement cell,
-            managed workshops, and collaborated across teams to streamline workflows and enhance deliverables.
-            story’s clear.</li>
-        </ul>
-
-        <!-- SKILLS PILL FORMAT -->
-        <div class="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm">
-          <span class="bg-[#1e293b] text-lime-400 px-4 py-2 rounded-full flex items-center gap-1 shadow-md"><i
-              class="fas fa-file-excel"></i> Excel</span>
-          <span class="bg-[#1e293b] text-teal-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-table"></i> PivotTables</span>
-          <span class="bg-[#1e293b] text-pink-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-random"></i> Power Query</span>
-          <span class="bg-[#1e293b] text-green-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="devicon-postgresql-plain"></i> SQL</span>
-          <span class="bg-[#1e293b] text-yellow-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-chart-bar"></i> Power BI</span>
-          <span class="bg-[#1e293b] text-indigo-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-code-branch"></i> DAX</span>
-          <span class="bg-[#1e293b] text-blue-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="devicon-python-plain"></i> Python</span>
-          <span class="bg-[#1e293b] text-red-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="devicon-numpy-original"></i> NumPy</span>
-          <span class="bg-[#1e293b] text-purple-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="devicon-pandas-original"></i> Pandas</span>
-          <span class="bg-[#1e293b] text-pink-600 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="devicon-matplotlib-plain"></i> Matplotlib</span>
-          <span class="bg-[#1e293b] text-emerald-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-search"></i> EDA</span>
-          <span class="bg-[#1e293b] text-fuchsia-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-code"></i> HTML</span>
-          <span class="bg-[#1e293b] text-cyan-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-code"></i> CSS</span>
-          <span class="bg-[#1e293b] text-purple-600 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-columns"></i> Bootstrap</span>
-          <span class="bg-[#1e293b] text-orange-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-project-diagram"></i> JIRA</span>
-          <span class="bg-[#1e293b] text-blue-600 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"><i
-              class="fas fa-folder-open"></i> Confluence</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MY TECH STACK -->
-  <section class="bg-[#121212] py-2 px-4 sm:px-6 md:px-20 text-white">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-10 text-blue-300">My Tech Stack</h2>
-
-      <!-- Logo Skills Grid -->
-      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
-
-        <!-- Python -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Python
-          </div>
+            <!-- Links (Desktop) -->
+            <div class="hidden md:flex gap-6 text-sm md:text-base">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="resume.html" class="nav-link">Resume</a>
+            </div>
         </div>
 
-        <!-- MySQL -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            MySQL
-          </div>
+        <!-- Dropdown Menu (Mobile) -->
+        <div id="nav-links" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+            <div class="flex flex-col gap-4 mt-4 text-sm">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="resume.html" class="nav-link">Resume</a>
+            </div>
         </div>
-
-        <!-- Power BI -->
-        <div class="group relative">
-          <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI" class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Power BI
-          </div>
+    </nav>
+    <section class="hero-section">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <p class="hero-tag"> THANK YOU FOR STOPPING BY! </p>
+            <h1 class="hero-title"> Hi, I'm <span>Shweta</span> </h1>
+            <h2 class="hero-role"> Analyst @ Mercer | Marsh McLennan </h2>
+            <p class="hero-description"> I use data to simplify complex problems and transform information into
+                actionable insights. Currently working at Mercer, supporting compensation and benefits analytics through
+                end-to-end survey administration, data validation, reporting, and large-scale workforce data operations.
+            </p>
+            <div class="hero-buttons"> <a href="https://www.linkedin.com/in/shweta-bhagat-869960214/"
+                    class="btn-primary-custom"> <i class="fab fa-linkedin"></i> LinkedIn </a> <a
+                    href="https://github.com/ShwetaBhagat13" class="btn-secondary-custom"> <i class="fab fa-github"></i>
+                    GitHub </a> </div>
         </div>
-
-        <!-- Excel -->
-        <div class="group relative">
-          <img src="https://img.icons8.com/color/96/microsoft-excel-2019--v1.png" alt="Excel"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Excel
-          </div>
+    </section>
+    <section class="intro-section bg-[#121212]">
+        <div class="intro-grid">
+            <div class="intro-left"> <span class="intro-tag"> - INTRO </span>
+                <h2 class="intro-heading"> Hello, I'm <span>Shweta Bhagat</span> </h2>
+                <p class="intro-text"> Analyst with hands-on experience in workforce data operations, analytics,
+                    reporting, survey administration, and quality assurance across large-scale datasets. </p>
+                <p class="intro-text"> Currently working at <span>Mercer</span>, supporting compensation and benefits
+                    survey operations across the <span>APAC market</span>. My work involves data validation, reporting,
+                    analytics, and process excellence that help organizations make informed workforce decisions. </p>
+                <p class="intro-text"> The world is changing faster than ever. I'm using data to better understand that
+                    change while continuously learning, adapting, and exploring new ideas to create meaningful business
+                    impact through analytics. </p>
+            </div>
+            <div class="intro-right">
+                <div class="journey-panel"> <!-- EXPERIENCE -->
+                    <div class="journey-card"> <span class="journey-label"> YEARS EXPERIENCE </span>
+                        <h3 class="journey-number"> <Span class="Journey-num">1</Span> <Span class="Journey-year"> +
+                                &nbsp; YOE</Span> </h3>
+                    </div> <!-- CAREER -->
+                    <div class="journey-card"> <span class="journey-label"> CAREER JOURNEY </span>
+                        <div class="career-flow">
+                            <div class="role-card current"> <span> Analyst </span> </div>
+                            <div class="career-arrow"> <i class="fas fa-arrow-up"></i> </div>
+                            <div class="role-card previous"> <span> Administrative Assistant </span> </div>
+                        </div>
+                    </div> <!-- APAC -->
+                    <div class="journey-card"> <span class="journey-label"> MARKET FOCUS </span>
+                        <h3 class="apac-text"> APAC </h3>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Pandas -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Pandas
-          </div>
+    </section> <!-- EDUCATION AND WORK HISTORY SECTION ---->
+    <section class="career-section"> <span class="intro-tag"> - WORK HISTORY & EDUCATION </span>
+        <div class="career-tabs"> <button class="tab-btn active" data-tab="experience"> <i class="fas fa-briefcase"></i>
+                Work History </button> <button class="tab-btn" data-tab="education"> <i
+                    class="fas fa-graduation-cap"></i> Education </button> </div> <!-- EDUCATION -->
+        <div class="tab-content" id="education">
+            <div class="education-content active-tab" id="education">
+                <div class="edu-card">
+                    <div class="edu-year">2021 — 2024</div>
+                    <div class="edu-details">
+                        <h3>Bachelor of Commerce (Hons.)</h3>
+                        <p>University of Delhi</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2020 — 2021</div>
+                    <div class="edu-details">
+                        <h3>Class XII (Commerce)</h3>
+                        <p>Central Board of Secondary Education (CBSE)</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2018 — 2019</div>
+                    <div class="edu-details">
+                        <h3>Class X</h3>
+                        <p>Central Board of Secondary Education (CBSE)</p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- EXPERIENCE -->
+        <div class="tab-content active-tab" id="experience">
+            <div class="experience-wrapper"> <!-- ANALYST -->
+                <div class="experience-card current-role">
+                    <div class="exp-top">
+                        <div> <span class="exp-tag">CURRENT ROLE</span>
+                            <h3>Analyst</h3>
+                            <h4>Mercer |<span class="exp-duration"> Dec 2025 — Present </span></h4>
+                        </div>
+                        <div class="exp-badge"> APAC </div>
+                    </div>
+                    <!-- <div class="exp-skills"> <span>Survey Analytics</span> <span>Data Validation</span> <span>Job Matching</span> <span>Quality Assurance</span> </div> -->
+                    <ul class="exp-points">
+                        <li> Transform raw compensation data from participating organizations into <span
+                                class="highlight">reliable market benchmarks</span> used for pay and talent decisions.
+                        </li>
+                        <li> Review, validate, and standardize <span class="highlight">workforce and compensation
+                                datasets</span> to ensure accuracy across compensation surveys. </li>
+                        <li> Align client job structures with <span class="highlight">Mercer’s global job
+                                framework</span> for consistent benchmarking across companies and industries. </li>
+                        <li> Apply data quality, business logics, and benchmarking checks to identify data anomalies,
+                            compensation outliers, and reporting gaps. </li>
+                        <li> Work closely with <span class="highlight">consultants and regional teams</span> to resolve
+                            data challenges and strengthen survey quality. </li>
+                        <li> Support the delivery of <span class="highlight">compensation insights</span> that help
+                            organizations evaluate their market competitiveness. </li>
+                    </ul>
+                </div> <!-- ADMIN -->
+                <div class="experience-card">
+                    <div class="exp-top">
+                        <div> <span class="exp-tag secondary"> PREVIOUS ROLE </span>
+                            <h3>Administrative Assistant</h3>
+                            <h4>Mercer |<span class="exp-duration"> May 2025 — Nov 2025 </span></h4>
+                        </div>
+                        <div class="exp-badge secondary-badge"> GLOBAL </div>
+                    </div>
+                    <ul class="exp-points">
+                        <li> Produced and published <span class="highlight">400+ compensation and benefits
+                                reports</span> across global survey products. </li>
+                        <li> Validated compensation datasets and performed quality reviews, achieving a <span
+                                class="highlight">93.4% First-Time-Right (FTR) rate</span>. </li>
+                        <li> Prepared client-facing market reportsand survey deliverables used for compensation
+                            benchmarking. </li>
+                        <li> Configured secure <span class="highlight">Market Views</span>, enabling clients to access
+                            and analyze compensation data. </li>
+                        <li> Conducted final publication reviews to ensure accuracy, consistency, and timely delivery of
+                            survey outputs. </li>
+                        <li> Supported global survey operations through collaboration with <span
+                                class="highlight">reporting, product, and cross-functional teams</span>. </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <!-- NumPy -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            NumPy
-          </div>
+    </section> <!-- WHY SHOULD YOU HIRE ME -->
+    <section class="bg-[#121212] skills-section">
+        <div class="skills-grid"> <!-- LEFT SIDE -->
+            <div class="skills-left"> <span class="section-tag"> - STRENGTHS </span>
+                <h2 class="skills-heading"> Why Work With Me? </h2>
+                <div class="strength-list">
+                    <div class="strength-item"> <span class="strength-number">01</span>
+                        <div>
+                            <h4>Quick Learner</h4>
+                            <p> I adapt quickly to new tools, workflows, and business environments while continuously
+                                expanding my analytical skill set. </p>
+                        </div>
+                    </div>
+                    <div class="strength-item"> <span class="strength-number">02</span>
+                        <div>
+                            <h4>Hands-On Experience</h4>
+                            <p> Through my work at Mercer, I have gained practical experience in reporting, analytics,
+                                data validation, survey operations, and quality assurance. </p>
+                        </div>
+                    </div>
+                    <div class="strength-item"> <span class="strength-number">03</span>
+                        <div>
+                            <h4>Problem Solver</h4>
+                            <p> I enjoy transforming complex datasets into structured information that supports better
+                                decision-making. </p>
+                        </div>
+                    </div>
+                    <div class="strength-item"> <span class="strength-number">04 </span>
+                        <div>
+                            <h4>Strong Collaborator</h4>
+                            <p> Experienced in working across teams, managing stakeholders, and ensuring quality
+                                deliverables within strict timelines. </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- RIGHT SIDE -->
+            <div class="skills-right"> <span class="section-tag"> TOOLKIT </span>
+                <h2 class="skills-heading"> Tools I Work With </h2> <!-- SKILLS CLOUD -->
+                <div class="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm mt-8"> <span
+                        class="bg-[#1e293b] text-lime-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-file-excel"></i> Excel </span> <span
+                        class="bg-[#1e293b] text-teal-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-table"></i> Pivot Tables </span> <span
+                        class="bg-[#1e293b] text-pink-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-random"></i> Power Query </span> <span
+                        class="bg-[#1e293b] text-green-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-database"></i> SQL </span> <span
+                        class="bg-[#1e293b] text-yellow-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
+                        <i class="fas fa-chart-column"></i> Power BI </span> <span
+                        class="bg-[#1e293b] text-indigo-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
+                        <i class="fas fa-code-branch"></i> DAX </span> <span
+                        class="bg-[#1e293b] text-blue-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fab fa-python"></i> Python </span> <span
+                        class="bg-[#1e293b] text-red-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-cube"></i> NumPy </span> <span
+                        class="bg-[#1e293b] text-violet-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
+                        <i class="fas fa-table-columns"></i> Pandas </span> <span
+                        class="bg-[#1e293b] text-orange-400 px-4 py-2 rounded-full flex items-center gap-2 shadow-md">
+                        <i class="fas fa-diagram-project"></i> JIRA </span> <span
+                        class="bg-[#1e293b] text-blue-500 px-4 py-2 rounded-full flex items-center gap-2 shadow-md"> <i
+                            class="fas fa-folder-open"></i> Confluence </span> </div> <!-- CURRENTLY LEARNING -->
+                <div class="mt-10"> <span class="uppercase tracking-[4px] text-gray-500 text-xs"> Currently Learning
+                    </span>
+                    <div class="flex flex-wrap gap-3 mt-4"> <span
+                            class="bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-full">
+                            Snowflake </span> <span
+                            class="bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-full">
+                            PySpark </span> <span
+                            class="bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-full">
+                            Databricks </span> </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Matplotlib -->
-        <div class="group relative">
-          <img src="https://matplotlib.org/_static/images/logo2.svg" alt="Matplotlib" class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Matplotlib
-          </div>
+    </section>
+    <section class="showcase-section"> <span class="section-tag"> - MORE </span><BR>
+        <div class="showcase-tabs"> <button class="showcase-tab active" data-tab="achievements"> Achievements </button>
+            <button class="showcase-tab" data-tab="internships"> Internships </button>
+        </div> <!-- INTERNSHIPS -->
+        <div class="showcase-content" id="internships">
+            <div class="internship-timeline">
+                <div class="internship-item featured">
+                    <div class="internship-year"> 2024 </div>
+                    <div class="internship-info">
+                        <h3>Data Intern</h3>
+                        <h4>Regent Engineers Pvt. Ltd. | <span class="internship-duration"> 6 Months </span></h4>
+                        <p class="internship-description"> Worked with business datasets, reporting workflows,
+                            analytical tasks, and operational processes while gaining practical exposure to real-world
+                            data operations. </p>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-year"> 2024 </div>
+                    <div class="internship-info">
+                        <h3>Social Media Marketing Intern</h3>
+                        <h4>Yelow Autofin | <span class="internship-duration"> 3 Months </span></h4>
+                        <p class="internship-description"> Supported content planning, campaign execution, engagement
+                            tracking, and marketing initiatives. </p>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-year"> 2024 </div>
+                    <div class="internship-info">
+                        <h3>English Transcriber</h3>
+                        <h4>Josh Talks |<span class="internship-duration"> 1 Month </span></h4>
+                        <p class="internship-description"> Produced accurate transcripts and subtitles while maintaining
+                            content quality, consistency, and attention to detail. </p>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-year"> 2022 </div>
+                    <div class="internship-info">
+                        <h3>Intern</h3>
+                        <h4>Your Career Folio |<span class="internship-duration"> 3 Months </span></h4>
+                        <p class="internship-description"> Designed marketing creatives, collaborated with
+                            cross-functional teams, and contributed to projects that enhanced brand communication and
+                            engagement. </p>
+                    </div>
+                </div>
+                <div class="internship-item">
+                    <div class="internship-year"> 2022 </div>
+                    <div class="internship-info">
+                        <h3>Intern</h3>
+                        <h4>The Jurni |<span class="internship-duration"> 2 Months </span></h4>
+                        <p class="internship-description"> Supported digital marketing initiatives, audience growth
+                            strategies, and content promotion for a fast-growing media-tech startup. </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- ACHIEVEMENTS -->
+        <div class="showcase-content active-content" id="achievements">
+            <div class="achievements-grid">
+                <div class="achievement-card recommendation">
+                    <div class="achievement-icon"> <i class="fas fa-file-signature"></i> </div> <span
+                        class="achievement-tag"> RECOMMENDATION </span>
+                    <h3> Letter of Recommendation </h3>
+                    <h4> Training & Placement Cell </h4>
+                    <p> Received formal recognition for leadership, teamwork, and contributions across placement
+                        activities and initiatives. </p>
+                </div>
+                <div class="achievement-card appreciation">
+                    <div class="achievement-icon"> <i class="fas fa-award"></i> </div> <span class="achievement-tag">
+                        RECOGNITION </span>
+                    <h3> Certificate of Appreciation </h3>
+                    <h4> Your Career Folio </h4>
+                    <p> Awarded for outstanding contribution, commitment, and active participation during the internship
+                        program. </p>
+                </div>
+            </div>
         </div>
+    </section>
+    <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm"> © <span id="currentYear"></span>
+        Shweta Bhagat. All rights reserved. </footer>
+    <script> // Get current year const year = new Date().getFullYear(); document.getElementById("currentYear").innerText = year; </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+        /* ========= HEADER / MOBILE NAVIGATION ==================== */
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const icon = menuBtn.querySelector('i');
 
-        <!-- HTML -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            HTML
-          </div>
-        </div>
+        let isOpen = false;
 
-        <!-- CSS -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            CSS
-          </div>
-        </div>
+        menuBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
 
-        <!-- Bootstrap -->
-        <div class="group relative">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap"
-            class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Bootstrap
-          </div>
-        </div>
+            if (isOpen) {
+                navLinks.classList.remove('max-h-0', 'opacity-0');
+                navLinks.classList.add('max-h-96', 'opacity-100');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                navLinks.classList.remove('max-h-96', 'opacity-100');
+                navLinks.classList.add('max-h-0', 'opacity-0');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
 
-        <!-- JIRA -->
-        <div class="group relative">
-          <img src="https://img.icons8.com/color/48/jira.png" alt="JIRA" class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            JIRA
-          </div>
-        </div>
+        /* ========= HERO SECTION ANIMATION ======================= */
 
-        <!-- Confluence -->
-        <div class="group relative">
-          <img src="https://img.icons8.com/fluency/48/confluence.png" alt="Confluence" class="w-8 h-8 sm:w-10 sm:h-10">
-          <div
-            class="absolute bottom-[-1.75rem] left-1/2 transform -translate-x-1/2 scale-0 group-hover:scale-100 transition text-[10px] bg-black text-white px-1.5 py-0.5 rounded shadow">
-            Confluence
-          </div>
-        </div>
+        window.addEventListener("load", () => {
+            const hero = document.querySelector(".hero-content");
 
-      </div>
-    </div>
-    <br>
-  </section>
+            hero.animate(
+                [
+                    { opacity: 0, transform: "translateY(40px)" },
+                    { opacity: 1, transform: "translateY(0)" },
+                ],
+                {
+                    duration: 1200,
+                    easing: "ease-out",
+                    fill: "forwards",
+                }
+            );
+        });
 
-  <footer>
-    © <span id="year"></span> Shweta Bhagat. All rights reserved.
-  </footer>
+        /* ========= FEATURE TABS ================================= */
 
-  <script>
-    // Get current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        const tabs = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.getElementById('nav-links');
-    const icon = menuBtn.querySelector('i');
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                tabs.forEach((btn) => btn.classList.remove("active"));
+                contents.forEach((content) =>
+                    content.classList.remove("active-tab")
+                );
 
-    let isOpen = false;
+                tab.classList.add("active");
+                document
+                    .getElementById(tab.dataset.tab)
+                    .classList.add("active-tab");
+            });
+        });
 
-    menuBtn.addEventListener('click', () => {
-      isOpen = !isOpen;
+        /* ========= SHOWCASE TABS ================================ */
 
-      if (isOpen) {
-        navLinks.classList.remove('max-h-0', 'opacity-0');
-        navLinks.classList.add('max-h-96', 'opacity-100');
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        navLinks.classList.remove('max-h-96', 'opacity-100');
-        navLinks.classList.add('max-h-0', 'opacity-0');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
-  </script>
+        const showcaseTabs = document.querySelectorAll(".showcase-tab");
+        const showcaseContents = document.querySelectorAll(".showcase-content");
 
+        showcaseTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                showcaseTabs.forEach((btn) => btn.classList.remove("active"));
+                showcaseContents.forEach((content) =>
+                    content.classList.remove("active-content")
+                );
 
+                tab.classList.add("active");
+                document
+                    .getElementById(tab.dataset.tab)
+                    .classList.add("active-content");
+            });
+        });
+    </script>
 </body>
 
 </html>
