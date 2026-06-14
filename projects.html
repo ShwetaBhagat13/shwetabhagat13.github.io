@@ -27,11 +27,11 @@
         nav {
             background-color: #1a1a1a;
             border-bottom: 1px solid #2c2c2c;
-            position: sticky;
             top: 0;
             z-index: 50;
         }
 
+        /* NAV LINKS BASE STYLE */
         nav .nav-link {
             margin: 0 0.5rem;
             padding: 0.5rem;
@@ -41,16 +41,19 @@
             transition: all 0.3s ease;
         }
 
+        /* HOVER EFFECT */
         nav .nav-link:hover {
-            color: #60a5fa;
+            color: #3b82f6;
         }
 
+        /* ACTIVE LINK */
         nav .nav-link.active,
         nav .nav-link:focus {
-            color: #38bdf8;
+            color: #3b82f6;
             font-weight: 600;
         }
 
+        /* UNDERLINE EFFECT */
         nav .nav-link::after {
             content: '';
             position: absolute;
@@ -58,22 +61,57 @@
             bottom: -4px;
             width: 0%;
             height: 2px;
-            background: #38bdf8;
+            background: #3b82f6;
             transition: width 0.3s ease;
         }
+
 
         nav .nav-link:hover::after,
         nav .nav-link.active::after {
             width: 100%;
         }
 
+        /* Hamburger styles */
         #menu-btn {
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
+        .hamburger-icon {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-icon.open {
+            transform: rotate(90deg);
+        }
+
+        .text-color {
+            color: #3b82f6;
+        }
+
+        /* Mobile menu animation */
         #nav-links {
             transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
             overflow: hidden;
+        }
+
+        #nav-links.closed {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        #nav-links.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        /* Mobile nav link hover */
+        #nav-links a {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #nav-links a:hover {
+            color: #38bdf8;
         }
 
         footer {
@@ -87,17 +125,20 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="bg-[#1a1a1a] border-b border-[#2c2c2c] px-6 md:px-20 py-4 sticky top-0 z-50 shadow-md">
+    <nav class="bg-black/10 px-6 md:px-20 py-4 top-0 z-50">
         <div class="flex justify-between items-center">
+            <!-- Logo -->
             <div class="text-3xl font-bold tracking-wide">
-                <span class="text-blue-400">&lt;</span><span class="text-white">Shweta</span><span
-                    class="text-blue-400">/&gt;</span>
+                <span class="text-400 text-color ">&lt;</span><span class="text-white">Shweta</span><span
+                    class="text-400 text-color">/&gt;</span>
             </div>
 
+            <!-- Hamburger (Mobile) -->
             <button id="menu-btn" class="text-white text-2xl md:hidden focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
 
+            <!-- Links (Desktop) -->
             <div class="hidden md:flex gap-6 text-sm md:text-base">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="projects.html" class="nav-link active">Projects</a>
@@ -105,6 +146,7 @@
             </div>
         </div>
 
+        <!-- Dropdown Menu (Mobile) -->
         <div id="nav-links" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
             <div class="flex flex-col gap-4 mt-4 text-sm">
                 <a href="index.html" class="nav-link">Home</a>
@@ -395,13 +437,16 @@
     <script>
         AOS.init({ once: true, duration: 1000 });
 
+        /* ========= HEADER / MOBILE NAVIGATION ==================== */
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         const icon = menuBtn.querySelector('i');
+
         let isOpen = false;
 
         menuBtn.addEventListener('click', () => {
             isOpen = !isOpen;
+
             if (isOpen) {
                 navLinks.classList.remove('max-h-0', 'opacity-0');
                 navLinks.classList.add('max-h-96', 'opacity-100');
@@ -414,6 +459,7 @@
                 icon.classList.add('fa-bars');
             }
         });
+        
     </script>
 </body>
 
