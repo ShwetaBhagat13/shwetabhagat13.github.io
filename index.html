@@ -188,19 +188,16 @@
             margin-bottom: 15px;
         }
 
-        .hero-title {
-            animation: fadeUp 1s ease;
+        .typing-text {
+            color: #3b82f6;
+            border-right: 3px solid #3b82f6;
+            padding-right: 6px;
+            animation: blink .4s infinite;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @keyframes blink {
+            50% {
+                border-color: transparent;
             }
         }
 
@@ -1452,7 +1449,7 @@
         <div class="hero-glow"></div>
         <div class="hero-content">
             <p class="hero-tag"> THANK YOU FOR STOPPING BY! </p>
-            <h1 class="hero-title"> Hi, I'm <span>Shweta</span> </h1>
+            <h1 class="hero-title"> Hi, I'm <span class="typing-text"></span></h1>
             <h2 class="hero-role"> Analyst @ Mercer | Marsh McLennan </h2>
             <p class="hero-description"> I use data to simplify complex problems and transform information into
                 actionable insights. Currently working at Mercer, supporting compensation and benefits analytics through
@@ -1732,6 +1729,40 @@
         /* ========= FOOTER YEAR ==================== */
         document.getElementById("currentYear").textContent =
             new Date().getFullYear();
+
+        /* ========= HERO SECTION - NAME ========= */
+        const words = [
+            "Shweta",
+            "Data Analyst"
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.querySelector(".typing-text");
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (!isDeleting) {
+                typingText.textContent =
+                    currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1500);
+                    return;
+                }
+            } else {
+
+                typingText.textContent =
+                    currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 80 : 120);
+        }
+        typeEffect();
         
         /* ========= HEADER / MOBILE NAVIGATION ==================== */
         const menuBtn = document.getElementById('menu-btn');
