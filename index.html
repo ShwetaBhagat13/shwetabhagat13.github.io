@@ -251,14 +251,14 @@
 
         /* INTRO */
         .intro-section {
-            padding: 110px 8%;
+            padding: 100px 7%;
             background: #121212
         }
 
         .intro-grid {
             display: grid;
             grid-template-columns: minmax(0, 1fr) 470px;
-            gap: 90px;
+            gap: 75px;
             align-items: center;
             max-width: 1250px;
             margin: auto
@@ -434,7 +434,7 @@
 
         /* CAREER */
         .career-section {
-            padding: 90px 7% 105px;
+            padding: 85px 7% 95px;
             background: #0e0e0e
         }
 
@@ -448,7 +448,7 @@
             gap: 3px;
             width: 100%;
             padding: 4px;
-            margin-bottom: 55px;
+            margin-bottom: 50px;
             background: #151515;
             border-bottom: 1px solid #292929
         }
@@ -840,7 +840,7 @@
         /* SKILLS */
         .skills-section {
             position: relative;
-            padding: 100px 8%;
+            padding: 90px 7%;
             overflow: hidden;
             background: #121212
         }
@@ -850,7 +850,7 @@
             z-index: 2;
             display: grid;
             grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-            gap: clamp(55px, 8vw, 110px);
+            gap: clamp(50px, 7vw, 90px);
             max-width: 1250px;
             margin: auto
         }
@@ -1050,7 +1050,7 @@
         /* HONORS & AWARDS */
         .awards-section {
             position: relative;
-            padding: 100px 8%;
+            padding: 90px 7%;
             background: #0e0e0e;
             overflow: hidden
         }
@@ -1063,7 +1063,7 @@
         }
 
         .awards-header {
-            margin-bottom: 50px
+            margin-bottom: 45px
         }
 
         .awards-tag {
@@ -1087,16 +1087,16 @@
         .awards-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 26px
+            gap: 24px
         }
 
         .award-card {
             position: relative;
             min-width: 0;
-            min-height: 440px;
-            padding: 50px 38px 38px;
+            min-height: 430px;
+            padding: 45px 34px 34px;
             border: 1px solid rgba(255, 255, 255, .08);
-            border-radius: 36px;
+            border-radius: 32px;
             background: linear-gradient(145deg, #171717, #121212);
             overflow: hidden;
             display: flex;
@@ -1143,14 +1143,14 @@
         }
 
         .award-icon {
-            width: 78px;
-            height: 78px;
-            margin-bottom: 48px;
+            width: 72px;
+            height: 72px;
+            margin-bottom: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 22px;
-            font-size: 1.8rem
+            border-radius: 20px;
+            font-size: 1.7rem
         }
 
         .award-card.green .award-icon {
@@ -1170,7 +1170,7 @@
 
         .award-category {
             display: block;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: #858585;
             font-size: .68rem;
             font-weight: 500;
@@ -1179,17 +1179,17 @@
         }
 
         .award-title {
-            margin: 0 0 12px;
+            margin: 0 0 11px;
             color: #f4f4f4;
-            font-size: 1.55rem;
+            font-size: 1.45rem;
             font-weight: 500;
             line-height: 1.35;
             letter-spacing: -.3px
         }
 
         .award-issuer {
-            margin: 0 0 30px;
-            font-size: .98rem;
+            margin: 0 0 25px;
+            font-size: .96rem;
             font-weight: 600;
             line-height: 1.5
         }
@@ -1209,14 +1209,14 @@
         .award-description {
             margin: 0;
             color: #999;
-            font-size: .91rem;
-            line-height: 1.8
+            font-size: .89rem;
+            line-height: 1.75
         }
 
         .award-meta {
-            margin: -20px 0 26px;
+            margin: -16px 0 23px;
             color: #666;
-            font-size: .78rem;
+            font-size: .76rem;
             line-height: 1.5
         }
 
@@ -1226,7 +1226,7 @@
             gap: 8px;
             width: max-content;
             margin-top: auto;
-            padding-top: 28px;
+            padding-top: 25px;
             color: #aaa;
             font-size: .8rem;
             font-weight: 600;
@@ -1260,11 +1260,11 @@
             font-size: .75rem
         }
 
-        /* RESPONSIVE */
+        /* TABLET */
         @media(max-width:1200px) {
             .intro-grid {
                 grid-template-columns: minmax(0, 1fr) 430px;
-                gap: 60px
+                gap: 55px
             }
 
             .mercer-experience {
@@ -1281,15 +1281,16 @@
             }
         }
 
+        /* SMALL DESKTOP */
         @media(max-width:1100px) {
 
             .skills-section,
             .awards-section {
-                padding: 90px 6%
+                padding: 80px 6%
             }
 
             .skills-grid {
-                gap: 60px
+                gap: 55px
             }
 
             .awards-grid {
@@ -1297,15 +1298,16 @@
             }
 
             .award-card:last-child {
-                grid-column: 1/-1;
-                max-width: calc(50% - 13px)
+                grid-column: auto;
+                max-width: none
             }
         }
 
+        /* TABLET */
         @media(max-width:992px) {
             .intro-grid {
                 grid-template-columns: 1fr;
-                gap: 70px
+                gap: 60px
             }
 
             .intro-left {
@@ -1318,7 +1320,7 @@
             }
 
             .work-role-content h3 {
-                font-size: 1.75rem
+                font-size: 1.6rem
             }
 
             .work-points li {
@@ -1326,7 +1328,7 @@
             }
 
             .work-company-header {
-                margin-bottom: 32px
+                margin-bottom: 30px
             }
 
             .work-timeline {
@@ -1334,10 +1336,11 @@
             }
         }
 
+        /* SMALL TABLET */
         @media(max-width:900px) {
             .skills-grid {
                 grid-template-columns: 1fr;
-                gap: 75px
+                gap: 65px
             }
 
             .skills-left,
@@ -1354,9 +1357,10 @@
             }
         }
 
+        /* MOBILE NAV */
         @media(max-width:768px) {
             nav {
-                padding: 15px 6%
+                padding: 14px 6%
             }
 
             .nav-logo {
@@ -1385,15 +1389,16 @@
             .mobile-nav .nav-link {
                 display: block;
                 margin: 0;
-                padding: 11px 0
+                padding: 10px 0
             }
 
+            /* INTRO MOBILE */
             .intro-section {
-                padding: 80px 6%
+                padding: 70px 6%
             }
 
             .intro-grid {
-                gap: 55px
+                gap: 50px
             }
 
             .mercer-experience {
@@ -1403,24 +1408,24 @@
 
             .mercer-company {
                 gap: 15px;
-                margin-bottom: 38px
+                margin-bottom: 35px
             }
 
             .mercer-logo {
-                width: 62px;
-                height: 62px
+                width: 60px;
+                height: 60px
             }
 
             .mercer-company-info h3 {
-                font-size: 1.8rem
+                font-size: 1.7rem
             }
 
             .mercer-employment {
-                font-size: .95rem
+                font-size: .92rem
             }
 
             .mercer-location {
-                font-size: .9rem
+                font-size: .85rem
             }
 
             .mercer-timeline {
@@ -1433,78 +1438,79 @@
             }
 
             .mercer-role-content h4 {
-                font-size: 1.4rem
+                font-size: 1.35rem
             }
 
             .mercer-role-content p {
-                font-size: .92rem
+                font-size: .88rem
             }
 
             .mercer-parent-company {
                 margin-left: 25px
             }
 
+            /* CAREER MOBILE */
             .career-section {
-                padding: 70px 6% 85px
+                padding: 65px 6% 80px
             }
 
             .career-tabs {
-                margin-bottom: 42px
+                margin-bottom: 40px
             }
 
             .career-tab {
-                padding: 13px 12px;
-                font-size: .82rem
-            }
-
-            .education-item {
-                gap: 20px;
-                padding-bottom: 30px
-            }
-
-            .education-logo {
-                width: 68px;
-                height: 68px;
-                flex-basis: 68px
-            }
-
-            .education-details h3 {
-                font-size: 1.35rem
-            }
-
-            .education-university {
-                font-size: .9rem
-            }
-
-            .education-date {
+                padding: 12px 10px;
                 font-size: .8rem
             }
 
-            .education-work-divider {
-                margin-bottom: 28px
+            .education-item {
+                gap: 18px;
+                padding-bottom: 28px
             }
 
-            .work-company-header {
-                gap: 16px;
-                margin-bottom: 30px
+            .education-logo {
+                width: 65px;
+                height: 65px;
+                flex-basis: 65px
             }
 
-            .work-company-logo {
-                width: 62px;
-                height: 62px;
-                flex-basis: 62px
+            .education-details h3 {
+                font-size: 1.25rem
             }
 
-            .work-company-info h2 {
-                font-size: 1.55rem
-            }
-
-            .company-employment {
+            .education-university {
                 font-size: .88rem
             }
 
-            .company-location {
+            .education-date {
                 font-size: .78rem
+            }
+
+            .education-work-divider {
+                margin-bottom: 26px
+            }
+
+            .work-company-header {
+                gap: 15px;
+                margin-bottom: 28px
+            }
+
+            .work-company-logo {
+                width: 60px;
+                height: 60px;
+                flex-basis: 60px
+            }
+
+            .work-company-info h2 {
+                font-size: 1.45rem
+            }
+
+            .company-employment {
+                font-size: .86rem
+            }
+
+            .company-location {
+                font-size: .76rem
             }
 
             .work-timeline {
@@ -1513,9 +1519,7 @@
             }
 
             .work-timeline::before {
-                left: 0;
-                top: 12px;
-                width: 2px
+                top: 12px
             }
 
             .timeline-marker {
@@ -1530,29 +1534,28 @@
             }
 
             .work-role {
-                padding-bottom: 35px
+                padding-bottom: 32px
             }
 
             .role-status {
-                font-size: .6rem;
-                letter-spacing: 2.5px;
-                margin-bottom: 8px
+                font-size: .58rem;
+                letter-spacing: 2.5px
             }
 
             .work-role-content h3 {
-                font-size: 1.5rem
+                font-size: 1.4rem
             }
 
             .role-date {
-                font-size: .8rem;
-                margin-bottom: 18px
+                font-size: .78rem;
+                margin-bottom: 16px
             }
 
             .work-points li {
                 padding-left: 18px;
-                font-size: .84rem;
-                line-height: 1.65;
-                margin-bottom: 10px
+                font-size: .82rem;
+                line-height: 1.6;
+                margin-bottom: 9px
             }
 
             .internship-timeline {
@@ -1576,29 +1579,28 @@
             }
 
             .internship-content h3 {
-                font-size: 1.2rem
+                font-size: 1.15rem
             }
 
             .internship-content h4 {
-                font-size: .88rem
+                font-size: .84rem
             }
 
             .internship-description {
-                font-size: .85rem
+                font-size: .82rem
             }
-        }
 
-        @media(max-width:700px) {
+            /* AWARDS MOBILE */
             .awards-section {
-                padding: 75px 6%
+                padding: 70px 6%
             }
 
             .awards-header {
-                margin-bottom: 35px
+                margin-bottom: 32px
             }
 
             .awards-tag {
-                font-size: .68rem;
+                font-size: .66rem;
                 letter-spacing: 2.5px
             }
 
@@ -1608,7 +1610,7 @@
 
             .awards-grid {
                 grid-template-columns: 1fr;
-                gap: 20px
+                gap: 18px
             }
 
             .award-card,
@@ -1616,46 +1618,83 @@
                 grid-column: auto;
                 max-width: none;
                 min-height: auto;
-                padding: 38px 30px 32px;
-                border-radius: 28px
+                padding: 35px 28px 30px;
+                border-radius: 27px
             }
 
             .award-icon {
-                width: 68px;
-                height: 68px;
-                margin-bottom: 38px;
-                border-radius: 19px;
-                font-size: 1.55rem
+                width: 66px;
+                height: 66px;
+                margin-bottom: 34px;
+                border-radius: 18px;
+                font-size: 1.5rem
             }
 
             .award-category {
-                margin-bottom: 18px;
-                font-size: .63rem;
+                margin-bottom: 17px;
+                font-size: .62rem;
                 letter-spacing: 3px
             }
 
             .award-title {
-                font-size: 1.35rem
+                font-size: 1.3rem
             }
 
             .award-issuer {
-                font-size: .9rem;
-                margin-bottom: 22px
+                font-size: .88rem;
+                margin-bottom: 20px
             }
 
             .award-description {
-                font-size: .86rem;
+                font-size: .84rem;
                 line-height: 1.7
             }
 
             .award-link {
-                padding-top: 24px
+                padding-top: 22px
             }
         }
 
+        /* MOBILE */
         @media(max-width:600px) {
+            .hero-section {
+                min-height: 78vh;
+                padding: 65px 18px
+            }
+
+            .hero-tag {
+                font-size: .72rem;
+                letter-spacing: 3px;
+                margin-bottom: 18px
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 13vw, 4rem)
+            }
+
+            .hero-role {
+                font-size: 1.25rem;
+                margin-bottom: 22px
+            }
+
+            .hero-description {
+                font-size: .9rem;
+                line-height: 1.75
+            }
+
+            .hero-buttons {
+                margin-top: 30px;
+                gap: 11px
+            }
+
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                padding: 12px 20px;
+                border-radius: 13px
+            }
+
             .skills-section {
-                padding: 75px 6%
+                padding: 70px 6%
             }
 
             .skills-section::before {
@@ -1663,17 +1702,17 @@
             }
 
             .skills-grid {
-                gap: 65px
+                gap: 55px
             }
 
             .section-tag {
-                margin-bottom: 13px;
-                font-size: .68rem;
+                margin-bottom: 12px;
+                font-size: .66rem;
                 letter-spacing: 2.5px
             }
 
             .skills-heading {
-                margin-bottom: 30px;
+                margin-bottom: 28px;
                 font-size: 1.9rem;
                 letter-spacing: -.4px
             }
@@ -1681,12 +1720,12 @@
             .strength-item {
                 grid-template-columns: 32px minmax(0, 1fr);
                 gap: 14px;
-                padding-bottom: 21px;
-                margin-bottom: 21px
+                padding-bottom: 20px;
+                margin-bottom: 20px
             }
 
             .strength-number {
-                font-size: .7rem;
+                font-size: .68rem;
                 letter-spacing: 1.5px
             }
 
@@ -1696,47 +1735,48 @@
             }
 
             .strength-item p {
-                font-size: .86rem;
-                line-height: 1.7
+                font-size: .83rem;
+                line-height: 1.65
             }
 
             .skills-cloud {
-                gap: 8px
+                gap: 7px
             }
 
             .skill-pill {
-                min-height: 36px;
-                padding: 8px 11px;
-                font-size: .76rem
+                min-height: 35px;
+                padding: 7px 10px;
+                font-size: .74rem
             }
 
             .skill-pill i {
-                font-size: .78rem
+                font-size: .75rem
             }
 
             .learning-box {
-                margin-top: 35px;
-                padding-top: 22px
+                margin-top: 30px;
+                padding-top: 20px
             }
 
             .learning-label {
-                font-size: .62rem;
+                font-size: .6rem;
                 letter-spacing: 2.5px
             }
 
             .learning-list {
-                gap: 8px
+                gap: 7px
             }
 
             .learning-pill {
-                padding: 8px 11px;
-                font-size: .75rem
+                padding: 7px 10px;
+                font-size: .72rem
             }
         }
 
+        /* SMALL MOBILE */
         @media(max-width:480px) {
             .hero-section {
-                padding: 70px 18px
+                padding: 60px 16px
             }
 
             .hero-buttons {
@@ -1750,15 +1790,16 @@
             }
 
             .intro-section {
-                padding: 65px 5%
+                padding: 60px 5%
             }
 
             .intro-heading {
-                font-size: 1.8rem
+                font-size: 1.75rem
             }
 
             .intro-text {
-                font-size: .9rem
+                font-size: .88rem;
+                line-height: 1.75
             }
 
             .mercer-company {
@@ -1766,20 +1807,20 @@
             }
 
             .mercer-logo {
-                width: 55px;
-                height: 55px
+                width: 54px;
+                height: 54px
             }
 
             .mercer-company-info h3 {
-                font-size: 1.55rem
+                font-size: 1.5rem
             }
 
             .mercer-employment {
-                font-size: .82rem
+                font-size: .8rem
             }
 
             .mercer-location {
-                font-size: .78rem
+                font-size: .75rem
             }
 
             .mercer-timeline {
@@ -1796,92 +1837,91 @@
             }
 
             .mercer-timeline-marker span {
-                width: 16px;
-                height: 16px
+                width: 15px;
+                height: 15px
             }
 
             .mercer-role {
-                min-height: 120px
+                min-height: 110px
             }
 
             .mercer-role-content h4 {
-                font-size: 1.25rem
+                font-size: 1.2rem
             }
 
             .mercer-role-content p {
-                font-size: .82rem
+                font-size: .8rem
             }
 
             .mercer-parent-company {
                 margin-left: 20px;
-                font-size: .72rem
+                font-size: .7rem
             }
 
             .career-section {
-                padding: 55px 5% 70px
+                padding: 55px 5% 68px
             }
 
             .career-section>.intro-tag {
-                font-size: .7rem;
-                letter-spacing: 2.5px
+                font-size: .68rem;
+                letter-spacing: 2.3px
             }
 
             .career-tabs {
-                margin-bottom: 35px
+                margin-bottom: 32px
             }
 
             .career-tab {
-                font-size: .72rem;
-                padding: 11px 7px
+                font-size: .7rem;
+                padding: 10px 6px
             }
 
             .career-tab i {
-                margin-right: 4px
+                margin-right: 3px
             }
 
             .education-item {
-                gap: 14px;
-                padding-bottom: 26px
+                gap: 13px;
+                padding-bottom: 24px
             }
 
             .education-logo {
-                width: 55px;
-                height: 55px;
-                flex-basis: 55px
+                width: 54px;
+                height: 54px;
+                flex-basis: 54px
             }
 
             .education-details h3 {
-                font-size: 1.08rem;
-                line-height: 1.3
+                font-size: 1.05rem
             }
 
             .education-university {
-                font-size: .8rem;
+                font-size: .77rem;
                 margin-bottom: 4px
             }
 
             .education-date {
-                font-size: .7rem
+                font-size: .68rem
             }
 
             .education-work-divider {
-                margin-bottom: 25px
+                margin-bottom: 23px
             }
 
             .work-company-header {
                 align-items: flex-start;
-                gap: 13px;
-                margin-bottom: 27px
+                gap: 12px;
+                margin-bottom: 25px
             }
 
             .work-company-logo {
-                width: 52px;
-                height: 52px;
-                flex-basis: 52px
+                width: 51px;
+                height: 51px;
+                flex-basis: 51px
             }
 
             .work-company-info h2 {
-                font-size: 1.2rem;
+                font-size: 1.17rem;
                 line-height: 1.3
             }
 
@@ -1890,60 +1930,58 @@
             }
 
             .company-employment {
-                font-size: .76rem;
+                font-size: .73rem;
                 margin-bottom: 4px
             }
 
             .company-location {
-                font-size: .68rem
+                font-size: .66rem
             }
 
             .work-timeline {
-                margin-left: 28px;
-                padding-left: 29px
+                margin-left: 27px;
+                padding-left: 28px
             }
 
             .work-timeline::before {
-                left: 0;
                 width: 1px;
                 top: 10px
             }
 
             .timeline-marker {
-                left: -43px;
-                width: 28px;
-                height: 28px;
-                border-width: 2px
+                left: -42px;
+                width: 27px;
+                height: 27px
             }
 
             .timeline-marker::after {
-                width: 15px;
-                height: 15px
+                width: 14px;
+                height: 14px
             }
 
             .work-role {
-                padding-bottom: 32px
+                padding-bottom: 30px
             }
 
             .role-status {
-                font-size: .5rem;
-                letter-spacing: 1.8px
+                font-size: .49rem;
+                letter-spacing: 1.7px
             }
 
             .work-role-content h3 {
-                font-size: 1.18rem
+                font-size: 1.15rem
             }
 
             .role-date {
-                font-size: .7rem;
-                margin-bottom: 16px
+                font-size: .68rem;
+                margin-bottom: 14px
             }
 
             .work-points li {
-                padding-left: 16px;
-                font-size: .76rem;
-                line-height: 1.6;
-                margin-bottom: 9px
+                padding-left: 15px;
+                font-size: .74rem;
+                line-height: 1.55;
+                margin-bottom: 8px
             }
 
             .work-points li::before {
@@ -1952,7 +1990,7 @@
             }
 
             .internship-timeline {
-                padding-left: 30px
+                padding-left: 29px
             }
 
             .internship-timeline::before {
@@ -1960,159 +1998,262 @@
             }
 
             .internship-content::before {
-                left: -29px;
+                left: -28px;
                 width: 8px;
                 height: 8px
             }
 
             .internship-year {
-                font-size: .62rem
+                font-size: .6rem
             }
 
             .internship-content h3 {
-                font-size: 1.05rem
+                font-size: 1rem
             }
 
             .internship-content h4 {
-                font-size: .78rem
+                font-size: .76rem
             }
 
             .internship-description {
-                font-size: .76rem;
-                line-height: 1.65
+                font-size: .74rem;
+                line-height: 1.6
             }
 
             .awards-section {
-                padding: 65px 5%
+                padding: 60px 5%
+            }
+
+            .awards-header {
+                margin-bottom: 28px
+            }
+
+            .awards-heading {
+                font-size: 1.75rem
+            }
+
+            .awards-grid {
+                gap: 16px
             }
 
             .award-card,
             .award-card:last-child {
-                padding: 32px 24px 28px;
-                border-radius: 24px
+                padding: 30px 23px 26px;
+                border-radius: 23px
             }
 
             .award-icon {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 32px;
-                border-radius: 17px;
-                font-size: 1.35rem
+                width: 58px;
+                height: 58px;
+                margin-bottom: 29px;
+                border-radius: 16px;
+                font-size: 1.3rem
+            }
+
+            .award-category {
+                margin-bottom: 14px;
+                font-size: .57rem;
+                letter-spacing: 2.5px
             }
 
             .award-title {
-                font-size: 1.2rem
+                font-size: 1.15rem
+            }
+
+            .award-issuer {
+                font-size: .8rem;
+                margin-bottom: 17px
+            }
+
+            .award-meta {
+                font-size: .66rem;
+                margin: -8px 0 17px
             }
 
             .award-description {
-                font-size: .82rem
-            }
-        }
-
-        @media(max-width:400px) {
-            .skills-section {
-                padding: 65px 5%
-            }
-
-            .skills-heading {
-                font-size: 1.7rem
-            }
-
-            .strength-item {
-                grid-template-columns: 28px minmax(0, 1fr);
-                gap: 11px
-            }
-
-            .strength-item p {
-                font-size: .82rem;
+                font-size: .78rem;
                 line-height: 1.65
             }
 
-            .skill-pill {
-                min-height: 34px;
-                padding: 7px 10px;
+            .award-link {
+                padding-top: 18px;
                 font-size: .72rem
-            }
-
-            .skill-pill i {
-                font-size: .72rem
-            }
-
-            .learning-pill {
-                font-size: .71rem
             }
         }
 
+        /* VERY SMALL */
         @media(max-width:360px) {
+            .nav-logo {
+                font-size: 1.45rem
+            }
+
+            .hero-section {
+                padding: 55px 14px
+            }
+
+            .hero-title {
+                font-size: 2.4rem
+            }
+
+            .hero-role {
+                font-size: 1.1rem
+            }
+
+            .hero-description {
+                font-size: .84rem
+            }
+
+            .intro-heading {
+                font-size: 1.6rem
+            }
+
+            .intro-text {
+                font-size: .82rem
+            }
+
             .education-item {
-                gap: 11px
+                gap: 10px
             }
 
             .education-logo {
-                width: 48px;
-                height: 48px;
-                flex-basis: 48px
-            }
-
-            .education-details h3 {
-                font-size: .98rem
-            }
-
-            .education-university {
-                font-size: .74rem
-            }
-
-            .education-date {
-                font-size: .66rem
-            }
-
-            .work-company-logo {
                 width: 47px;
                 height: 47px;
                 flex-basis: 47px
             }
 
-            .work-company-header {
-                gap: 10px
+            .education-details h3 {
+                font-size: .95rem
             }
 
-            .work-company-info h2 {
-                font-size: 1.08rem
-            }
-
-            .company-employment {
+            .education-university {
                 font-size: .7rem
             }
 
-            .company-location {
+            .education-date {
                 font-size: .63rem
             }
 
+            .work-company-logo {
+                width: 46px;
+                height: 46px;
+                flex-basis: 46px
+            }
+
+            .work-company-header {
+                gap: 9px
+            }
+
+            .work-company-info h2 {
+                font-size: 1.02rem
+            }
+
+            .company-employment {
+                font-size: .67rem
+            }
+
+            .company-location {
+                font-size: .6rem
+            }
+
             .work-timeline {
-                margin-left: 23px;
-                padding-left: 25px
+                margin-left: 22px;
+                padding-left: 24px
             }
 
             .timeline-marker {
-                left: -38px;
-                width: 25px;
-                height: 25px
+                left: -37px;
+                width: 24px;
+                height: 24px
             }
 
             .timeline-marker::after {
-                width: 13px;
-                height: 13px
+                width: 12px;
+                height: 12px
             }
 
             .work-role-content h3 {
-                font-size: 1.08rem
+                font-size: 1.03rem
             }
 
             .work-points li {
-                font-size: .71rem
+                font-size: .69rem
+            }
+
+            .skills-section {
+                padding: 60px 5%
+            }
+
+            .skills-heading {
+                font-size: 1.65rem
+            }
+
+            .strength-item {
+                grid-template-columns: 27px minmax(0, 1fr);
+                gap: 10px
+            }
+
+            .strength-item p {
+                font-size: .78rem
+            }
+
+            .skill-pill {
+                min-height: 33px;
+                padding: 6px 9px;
+                font-size: .69rem
+            }
+
+            .skill-pill i {
+                font-size: .68rem
+            }
+
+            .learning-pill {
+                font-size: .68rem
+            }
+
+            .awards-section {
+                padding: 55px 5%
+            }
+
+            .awards-heading {
+                font-size: 1.6rem
+            }
+
+            .award-card,
+            .award-card:last-child {
+                padding: 27px 19px 23px
+            }
+
+            .award-icon {
+                width: 54px;
+                height: 54px;
+                margin-bottom: 26px
+            }
+
+            .award-title {
+                font-size: 1.05rem
+            }
+
+            .award-description {
+                font-size: .73rem
+            }
+        }
+
+        /* TOUCH */
+        @media(hover:none) {
+
+            .award-card:hover,
+            .skill-pill:hover,
+            .learning-pill:hover {
+                transform: none
+            }
+
+            .award-card:hover {
+                border-color: rgba(255, 255, 255, .08);
+                box-shadow: none
             }
         }
     </style>
+    
 </head>
 
 <body>
